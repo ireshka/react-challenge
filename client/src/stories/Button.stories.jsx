@@ -1,7 +1,6 @@
-import React from 'react';
+import { Grid, Typography } from '@mui/material';
 
 import { Button } from '../ui';
-import { Grid, Typography } from '@mui/material';
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {

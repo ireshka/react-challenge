@@ -1,6 +1,3 @@
-import React from 'react';
 import { formatCentsToDollars } from 'utils';
 
-export const Money = ({ inCents }) => {
-  return <>{formatCentsToDollars(inCents)} PLN</>;
-};
+export const Money = ({ inCents }) => <>{formatCentsToDollars(inCents)} PLN</>;

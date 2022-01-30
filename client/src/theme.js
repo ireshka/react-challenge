@@ -1,3 +1,5 @@
+/* eslint-disable import/no-mutable-exports */
+
 import { createTheme } from '@mui/material';
 
 let theme = createTheme({

@@ -1,3 +1,1 @@
-export const NoContent = () => {
-  return null;
-};
+export const NoContent = () => null;

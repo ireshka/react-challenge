@@ -1,6 +1,5 @@
-import * as React from 'react';
 import { Button as MuiButton } from '@mui/material';
 
-export function Button({ children, ...props }) {
-  return <MuiButton {...props}>{children}</MuiButton>;
-}
+export const Button = ({ children, ...props }) => (
+  <MuiButton {...props}>{children}</MuiButton>
+);
