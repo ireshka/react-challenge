@@ -25,6 +25,13 @@ let theme = createTheme({
       primary: '#333',
     },
     type: 'light',
+    grey: {
+      100: 'rgba(51, 51, 51, 0.07)',
+      200: 'rgba(51, 51, 51, 0.15)',
+      300: 'rgba(51, 51, 51, 0.25)',
+      400: 'rgba(51, 51, 51, 0.5)',
+      500: 'rgba(51, 51, 51, 0.75)',
+    },
     primary: {
       main: '#334ACC',
       dark: '#223289',
@@ -107,6 +114,13 @@ theme = createTheme(theme, {
     },
     button: {
       textTransform: 'none',
+      letterSpacing: 0,
+    },
+    caption: {
+      fontSize: '1.1875rem',
+      lineHeight: '1.5',
+      fontWeight: '400',
+      color: theme.palette.grey['400'],
     },
   },
   components: {
@@ -153,14 +167,14 @@ theme = createTheme(theme, {
            * Disabled button styles
            */
           '&:disabled': {
-            backgroundColor: theme.palette.grey[200],
-            color: theme.palette.grey[400],
+            backgroundColor: theme.palette.grey[100],
+            color: theme.palette.grey[300],
             ...(ownerState.variant === 'outlined' &&
               (ownerState.color === 'error' ||
                 ownerState.color === 'warning' ||
                 ownerState.color === 'success') && {
-                color: theme.palette.grey[400],
-                border: `1px solid ${theme.palette.grey[200]}`,
+                color: theme.palette.grey[300],
+                border: `1px solid ${theme.palette.grey[100]}`,
                 backgroundColor: 'transparent',
               }),
             ...(ownerState.color === 'primary' &&

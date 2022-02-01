@@ -135,8 +135,9 @@ module.exports = {
       // files with my prop types
       files: [
         'src/ui/atoms/Button.jsx',
-        // 'src/ui/atoms/NoContent.jsx',
-        // 'src/ui/atoms/Error.jsx',
+        'src/ui/atoms/InfoWithCaption.jsx',
+        'src/ui/atoms/NoContent.jsx',
+        'src/ui/atoms/Error.jsx',
       ],
       rules: {
         'react/prop-types': 'error',

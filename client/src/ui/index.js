@@ -4,6 +4,7 @@ export { Button } from './atoms/Button';
 export { Card } from './atoms/Card';
 export { ColorBox } from './atoms/ColorBox';
 export { Error } from './atoms/Error';
+export { InfoWithCaption } from './atoms/InfoWithCaption';
 export { ListItemLink } from './atoms/ListItemLink';
 export { Loader } from './atoms/Loader';
 export { LocalizedDate } from './atoms/LocalizedDate';
