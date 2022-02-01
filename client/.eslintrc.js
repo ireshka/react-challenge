@@ -116,15 +116,12 @@ module.exports = {
     react: {
       version: 'detect',
     },
-    /**
-    // TODO: Required after solving problem with import
-    'import/resolver': {
-      node: {
-        paths: ['src', '.'],
-        extensions: ['.js', '.jsx', '.ts', '.tsx'],
-      },
-    },
-    */
+    // 'import/resolver': {
+    //   node: {
+    //     paths: ['src', '.'],
+    //     extensions: ['.js', '.jsx', '.ts', '.tsx'],
+    //   },
+    // },
   },
   overrides: [
     {
@@ -134,21 +131,24 @@ module.exports = {
         'unicorn/prefer-module': 'off',
       },
     },
-    /** 
     {
       // files with my prop types
       files: [
         'src/ui/atoms/Button.jsx',
-        'src/ui/atoms/NoContent.jsx',
-        'src/ui/atoms/Error.jsx',
+        // 'src/ui/atoms/NoContent.jsx',
+        // 'src/ui/atoms/Error.jsx',
       ],
       rules: {
         'react/prop-types': 'error',
-        'react/require-default-props': 'error',
+        'react/require-default-props': [
+          'error',
+          {
+            ignoreFunctionalComponents: true,
+          },
+        ],
         'react/forbid-prop-types': 'error',
       },
     },
-    */
     {
       files: ['**/*.stories.*'],
       rules: {
