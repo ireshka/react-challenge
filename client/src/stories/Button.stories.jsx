@@ -64,7 +64,6 @@ const Template = ({ label, ...args }) => <Button {...args} text={label} />;
 // TODO: explore problem with fast click and color transition
 // eslint-disable-next-line no-alert
 const buttonAction = () => alert(`You've clicked, bravo!`);
-// const buttonAction = () => console.log('Test');
 
 const generateButtons = (
   color = 'primary',
