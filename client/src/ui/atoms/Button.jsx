@@ -10,8 +10,9 @@ export const Button = ({
   endIcon,
   startIcon,
 }) => {
+  const isOnlyIconButton = text ? !text.trim() : true;
   const iconButtonStyles = {
-    ...(!text && {
+    ...(isOnlyIconButton && {
       '&.MuiButton-sizeLarge': {
         width: (theme) => theme.sizing.button.large.onlyIcon.width,
         height: (theme) => theme.sizing.button.large.onlyIcon.height,
