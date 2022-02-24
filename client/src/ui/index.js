@@ -17,6 +17,7 @@ export { Table } from './molecules/table/Table';
 
 // organisms
 export { AppBar } from './organisms/AppBar';
+export { BudgetTableWidget } from './organisms/BudgetTable.widget';
 export { LedgerWidget } from './organisms/Ledger.widget';
 export { MainMenu } from './organisms/Menu';
 

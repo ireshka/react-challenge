@@ -144,7 +144,6 @@ theme = createTheme(theme, {
           },
           '& .MuiButton-endIcon': {
             marginRight: '-2px',
-            fontSize: '1rem',
             '& > *:nth-of-type(1)': {
               fontSize: '1rem',
             },
@@ -177,8 +176,8 @@ theme = createTheme(theme, {
                 border: `1px solid ${theme.palette.grey[100]}`,
                 backgroundColor: 'transparent',
               }),
-            ...(ownerState.color === 'primary' &&
-              ownerState.variant === 'outlined' && {
+            ...(ownerState.variant === 'outlined' &&
+              ownerState.color === 'primary' && {
                 border: 'none',
               }),
           },
@@ -192,13 +191,12 @@ theme = createTheme(theme, {
           backgroundColor: theme.palette.secondary.main,
           color: theme.palette.primary.main,
           border: 'none',
+          ':hover, :active': {
+            border: 'none',
+          },
           ':hover': {
             backgroundColor: theme.palette.secondary.dark,
             color: theme.palette.primary.dark,
-            border: 'none',
-          },
-          ':active': {
-            border: 'none',
           },
         },
         containedError: {
@@ -216,17 +214,14 @@ theme = createTheme(theme, {
         outlinedError: {
           color: theme.palette.error.main,
           border: `1px solid ${theme.palette.error.main}`,
-          ':hover': {
-            backgroundColor: theme.palette.error.dark,
-          },
-          ':active': {
+          ':hover, :active': {
             backgroundColor: theme.palette.error.dark,
           },
         },
         containedSuccess: {
           color: theme.palette.success.dark,
-          fontWeight: 600,
           backgroundColor: theme.palette.success.light,
+          fontWeight: 600,
           ':hover': {
             backgroundColor: theme.palette.success.dark,
             color: theme.palette.success.contrastText,
@@ -237,13 +232,10 @@ theme = createTheme(theme, {
           },
         },
         outlinedSuccess: {
-          fontWeight: 600,
           color: theme.palette.success.dark,
+          fontWeight: 600,
           border: `1px solid ${theme.palette.success.main}`,
-          ':hover': {
-            backgroundColor: theme.palette.success.light,
-          },
-          ':active': {
+          ':hover, :active': {
             backgroundColor: theme.palette.success.light,
           },
         },
@@ -263,10 +255,7 @@ theme = createTheme(theme, {
         outlinedWarning: {
           fontWeight: 600,
           border: `1px solid ${theme.palette.warning.main}`,
-          ':hover': {
-            backgroundColor: theme.palette.warning.light,
-          },
-          ':active': {
+          ':hover, :active': {
             backgroundColor: theme.palette.warning.light,
           },
         },
@@ -339,6 +328,15 @@ theme = createTheme(theme, {
       styleOverrides: {
         root: {
           borderRadius: theme.shape.borderRadius,
+        },
+      },
+    },
+    MuiTableRow: {
+      styleOverrides: {
+        root: {
+          '&.Mui-selected': {
+            backgroundColor: '#F9FAFD',
+          },
         },
       },
     },

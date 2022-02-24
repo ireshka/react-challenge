@@ -69,10 +69,11 @@ module.exports = {
     'unicorn/import-style': 'off',
     'unicorn/no-null': 'off',
     'unicorn/no-reduce': 'off',
+    'unicorn/no-static-only-class': 'off',
     'unicorn/numeric-separators-style': 'off',
+    'unicorn/prefer-number-properties': 'off',
     'unicorn/prefer-ternary': 'off',
     'unicorn/prevent-abbreviations': 'off',
-    'unicorn/no-static-only-class': 'off',
     /**
      * @info react rules
      */
@@ -116,12 +117,6 @@ module.exports = {
     react: {
       version: 'detect',
     },
-    // 'import/resolver': {
-    //   node: {
-    //     paths: ['src', '.'],
-    //     extensions: ['.js', '.jsx', '.ts', '.tsx'],
-    //   },
-    // },
   },
   overrides: [
     {
@@ -136,6 +131,8 @@ module.exports = {
       files: [
         'src/ui/atoms/Button.jsx',
         'src/ui/atoms/InfoWithCaption.jsx',
+        'src/ui/atoms/LocalizedDate.jsx',
+        'src/ui/atoms/Money.jsx',
         'src/ui/atoms/NoContent.jsx',
         'src/ui/atoms/Error.jsx',
       ],

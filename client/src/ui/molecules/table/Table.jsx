@@ -33,7 +33,7 @@ export const Table = ({ headCells, rows, getUniqueId, deleteRecords }) => {
   };
 
   const handleChangeRowsPerPage = (event) => {
-    setRowsPerPage(Number.parseInt(event.target.value, 10));
+    setRowsPerPage(parseInt(event.target.value, 10));
     setPage(0);
   };
 
