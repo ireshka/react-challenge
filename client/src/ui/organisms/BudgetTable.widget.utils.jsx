@@ -1,9 +1,12 @@
-import AddRoundedIcon from '@mui/icons-material/AddRounded';
-import { Button, CategoryCell, LocalizedDate, Money } from 'ui';
+import { CategoryCell, LocalizedDate, Money } from 'ui';
 
-export const DefineBudgetButton = (
-  <Button startIcon={<AddRoundedIcon />} text={'Zdefiniuj budżet'} />
-);
+const getAmountStatus = (row) => {
+  const status = row.amountInCents - row.currentSpending;
+  // eslint-disable-next-line no-nested-ternary
+  if (status < 0) return 'Przekroczone';
+  if (status > 0) return 'W normie';
+  return 'Wykorzystany';
+};
 
 export const budgetHeadCells = [
   {
@@ -26,15 +29,7 @@ export const budgetHeadCells = [
   {
     id: 'status',
     label: 'Status',
-    renderCell: (row) => {
-      const status = row.amountInCents - row.currentSpending;
-      // eslint-disable-next-line no-nested-ternary
-      return status < 0
-        ? 'Przekroczone'
-        : status > 0
-        ? 'W normie'
-        : 'Wykorzystany';
-    },
+    renderCell: (row) => getAmountStatus(row),
   },
   {
     id: 'creation-date',
