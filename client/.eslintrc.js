@@ -135,6 +135,7 @@ module.exports = {
         'src/ui/atoms/Money.jsx',
         'src/ui/atoms/NoContent.jsx',
         'src/ui/atoms/Error.jsx',
+        'src/ui/molecules/ButtonGroup.jsx',
       ],
       rules: {
         'react/prop-types': 'error',

@@ -12,6 +12,7 @@ export { Money } from './atoms/Money';
 export { NoContent } from './atoms/NoContent';
 
 // molecules
+export { ButtonGroup } from './molecules/ButtonGroup';
 export { CategoryCell } from './molecules/CategoryCell';
 export { Table } from './molecules/table/Table';
 
