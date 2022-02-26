@@ -1,6 +1,7 @@
 import AddRoundedIcon from '@mui/icons-material/AddRounded';
 import RemoveRoundedIcon from '@mui/icons-material/RemoveRounded';
-import { ActionHeader, Button, ButtonGroup, Card } from 'ui';
+import { Grid } from '@mui/material';
+import { ActionHeader, Button, ButtonGroup, Card, LedgerTableWidget } from 'ui';
 
 const PayInButton = (
   <Button text={'Wpłać'} variant={'outlined'} startIcon={<AddRoundedIcon />} />
@@ -20,7 +21,6 @@ export const LedgerWidget = () => (
       <ActionHeader
         variant={'h1'}
         title="Portfel"
-        // eslint-disable-next-line react/jsx-no-useless-fragment
         renderActions={() => (
           <ButtonGroup>
             <>
@@ -31,5 +31,11 @@ export const LedgerWidget = () => (
         )}
       />
     }
-  />
+  >
+    <Grid container>
+      <Grid item xs={12}>
+        <LedgerTableWidget />
+      </Grid>
+    </Grid>
+  </Card>
 );

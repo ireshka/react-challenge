@@ -20,7 +20,9 @@ export { Table } from './molecules/table/Table';
 export { AppBar } from './organisms/AppBar';
 export { BudgetTableWidget } from './organisms/BudgetTable.widget';
 export { LedgerWidget } from './organisms/Ledger.widget';
+export { LedgerTableWidget } from './organisms/LedgerTable.widget';
 export { MainMenu } from './organisms/Menu';
+export { TableWidget } from './organisms/Table.widget';
 
 // templates
 export { Layout } from './templates/Layout';
