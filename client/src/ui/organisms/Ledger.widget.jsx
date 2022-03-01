@@ -1,43 +1,31 @@
 import AddRoundedIcon from '@mui/icons-material/AddRounded';
 import RemoveRoundedIcon from '@mui/icons-material/RemoveRounded';
 import { Grid } from '@mui/material';
-import * as React from 'react';
+import { useLedgersModal } from 'hooks';
 import { ActionHeader, Button, ButtonGroup, Card, LedgerTableWidget } from 'ui';
 
 import { AddNewLedgerRecordModal } from './AddNewLedgerRecord.modal';
 
+const PayInButton = ({ handleClick }) => (
+  <Button
+    text={'Wpłać'}
+    variant={'outlined'}
+    startIcon={<AddRoundedIcon />}
+    onClick={() => handleClick('INCOME')}
+  />
+);
+
+const PayOutButton = ({ handleClick }) => (
+  <Button
+    text={'Wypłać'}
+    variant={'outlined'}
+    startIcon={<RemoveRoundedIcon />}
+    onClick={() => handleClick('EXPENSE')}
+  />
+);
+
 export const LedgerWidget = () => {
-  // TODO: Create hook
-  const [open, setOpen] = React.useState(false);
-  const [modalType, setModalType] = React.useState(null);
-
-  const handleClickOpen = (type) => {
-    setModalType(type);
-    setOpen(true);
-  };
-
-  const handleClose = () => {
-    setOpen(false);
-    setModalType(null);
-  };
-
-  const PayInButton = (
-    <Button
-      text={'Wpłać'}
-      variant={'outlined'}
-      startIcon={<AddRoundedIcon />}
-      onClick={() => handleClickOpen('INCOME')}
-    />
-  );
-
-  const PayOutButton = (
-    <Button
-      text={'Wypłać'}
-      variant={'outlined'}
-      startIcon={<RemoveRoundedIcon />}
-      onClick={() => handleClickOpen('EXPENSE')}
-    />
-  );
+  const { open, modalType, handleClickOpen, handleClose } = useLedgersModal();
 
   return (
     <>
@@ -49,8 +37,8 @@ export const LedgerWidget = () => {
             renderActions={() => (
               <ButtonGroup>
                 <>
-                  {PayInButton}
-                  {PayOutButton}
+                  <PayInButton handleClick={handleClickOpen} />
+                  <PayOutButton handleClick={handleClickOpen} />
                 </>
               </ButtonGroup>
             )}

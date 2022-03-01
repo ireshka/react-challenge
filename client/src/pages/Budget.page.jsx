@@ -1,6 +1,6 @@
 import AddRoundedIcon from '@mui/icons-material/AddRounded';
 import { Grid } from '@mui/material';
-import * as React from 'react';
+import { useBudgetModal } from 'hooks';
 import {
   ActionHeader,
   AddNewBudgetRecordModal,
@@ -10,24 +10,17 @@ import {
   Page,
 } from 'ui';
 
+const DefineBudgetButton = ({ handleClick }) => (
+  <Button
+    startIcon={<AddRoundedIcon />}
+    text={'Zdefiniuj budżet'}
+    onClick={() => handleClick()}
+  />
+);
+
 export const BudgetPage = () => {
-  const [open, setOpen] = React.useState(false);
+  const { open, handleClickOpen, handleClose } = useBudgetModal();
 
-  const handleClickOpen = () => {
-    setOpen(true);
-  };
-
-  const handleClose = () => {
-    setOpen(false);
-  };
-
-  const DefineBudgetButton = (
-    <Button
-      startIcon={<AddRoundedIcon />}
-      text={'Zdefiniuj budżet'}
-      onClick={handleClickOpen}
-    />
-  );
   return (
     <>
       <Page title="Budżet">
@@ -36,7 +29,9 @@ export const BudgetPage = () => {
             <ActionHeader
               variant="h1"
               title="Budżet"
-              renderActions={() => DefineBudgetButton}
+              renderActions={() => (
+                <DefineBudgetButton handleClick={handleClickOpen} />
+              )}
             />
           }
         >
