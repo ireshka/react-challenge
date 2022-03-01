@@ -12,7 +12,7 @@ const FormattedAmount = styled('span')(({ theme, mode }) => ({
 
 const getFormattedAmount = (row) => (
   <FormattedAmount mode={row.mode}>
-    <Money inCents={row.amountInCents} />
+    <Money inCents={row.amountInCents} fixed />
   </FormattedAmount>
 );
 
