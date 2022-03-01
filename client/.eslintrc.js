@@ -136,6 +136,9 @@ module.exports = {
         'src/ui/atoms/NoContent.jsx',
         'src/ui/atoms/Error.jsx',
         'src/ui/molecules/ButtonGroup.jsx',
+        'src/ui/molecules/Modal.jsx',
+        'src/ui/organisms/AddNewBudgetRecord.modal.jsx',
+        'src/ui/organisms/AddNewLedgerRecord.modal.jsx',
       ],
       rules: {
         'react/prop-types': 'error',

@@ -14,9 +14,12 @@ export { NoContent } from './atoms/NoContent';
 // molecules
 export { ButtonGroup } from './molecules/ButtonGroup';
 export { CategoryCell } from './molecules/CategoryCell';
+export { Modal } from './molecules/Modal';
 export { Table } from './molecules/table/Table';
 
 // organisms
+export { AddNewBudgetRecordModal } from './organisms/AddNewBudgetRecord.modal';
+export { AddNewLedgerRecordModal } from './organisms/AddNewLedgerRecord.modal';
 export { AppBar } from './organisms/AppBar';
 export { BudgetTableWidget } from './organisms/BudgetTable.widget';
 export { LedgerWidget } from './organisms/Ledger.widget';
