@@ -1,12 +1,22 @@
 import * as PropTypes from 'prop-types';
 import { Modal } from 'ui';
 
-// TODO: add props!
-export const AddNewLedgerRecordModal = ({ type, children, open, onClose }) => {
-  const modalHeader = type === 'INCOME' ? 'Dodaj wpływ' : 'Dodaj wydatek';
+export const AddNewLedgerRecordModal = ({
+  type,
+  children,
+  open,
+  onClose,
+  onSubmit,
+}) => {
+  const modalTitle = type === 'INCOME' ? 'Dodaj wpływ' : 'Dodaj wydatek';
 
   return (
-    <Modal description={modalHeader} open={open} onClose={onClose}>
+    <Modal
+      title={modalTitle}
+      open={open}
+      onClose={onClose}
+      onSubmit={onSubmit || onClose}
+    >
       {children}
     </Modal>
   );
@@ -17,4 +27,5 @@ AddNewLedgerRecordModal.propTypes = {
   children: PropTypes.element,
   open: PropTypes.bool.isRequired,
   onClose: PropTypes.func.isRequired,
+  onSubmit: PropTypes.func,
 };
