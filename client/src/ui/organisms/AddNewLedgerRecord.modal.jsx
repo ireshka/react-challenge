@@ -1,10 +1,11 @@
 import { Box, MenuItem, Stack } from '@mui/material';
 import { formInputs } from 'data';
-import { useCategories } from 'hooks';
+import { useAddLedger, useCategories } from 'hooks';
 import * as PropTypes from 'prop-types';
 import { useForm } from 'react-hook-form';
 import { CategoryCell, Input, Modal } from 'ui';
 import { Select } from 'ui/atoms/Select';
+import { formatDollarsToCents } from 'utils';
 
 const defaultValues = {
   nameValue: '',
@@ -21,15 +22,26 @@ const generateSelectCategories = (categoryList) => {
   ));
 };
 
+const getRequestBody = ({ type, formData }) => ({
+  mode: type,
+  title: formData.nameValue,
+  amountInCents: formatDollarsToCents(formData.amountValue),
+  categoryId: type === 'EXPENSE' ? formData.categoryValue : null,
+});
+
 export const AddNewLedgerRecordModal = ({ type, open, onClose }) => {
   const { data: categoriesList } = useCategories({ unlinkedToBudget: false });
-  const modalTitle = type === 'INCOME' ? 'Dodaj wpływ' : 'Dodaj wydatek';
+  const addLedgerMutation = useAddLedger();
   const { handleSubmit, control, formState, reset } = useForm({
     defaultValues,
     mode: 'all',
   });
 
-  const onSubmit = () => {
+  const modalTitle = type === 'INCOME' ? 'Dodaj wpływ' : 'Dodaj wydatek';
+
+  const onSubmit = (formData) => {
+    const bodyRequest = getRequestBody({ type, formData });
+    addLedgerMutation.mutate(bodyRequest);
     reset(defaultValues);
     onClose();
   };
