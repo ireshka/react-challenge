@@ -16,6 +16,7 @@ export { Select } from './atoms/Select';
 // molecules
 export { ButtonGroup } from './molecules/ButtonGroup';
 export { CategoryCell } from './molecules/CategoryCell';
+export { FormWrapper } from './molecules/Form.wrapper';
 export { Modal } from './molecules/Modal';
 export { Table } from './molecules/table/Table';
 

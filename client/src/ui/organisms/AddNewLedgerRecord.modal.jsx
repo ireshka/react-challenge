@@ -1,10 +1,9 @@
-import { Box, MenuItem, Stack } from '@mui/material';
+import { MenuItem } from '@mui/material';
 import { formInputs } from 'data';
 import { useAddLedger, useCategories } from 'hooks';
 import * as PropTypes from 'prop-types';
 import { useForm } from 'react-hook-form';
-import { CategoryCell, Input, Modal } from 'ui';
-import { Select } from 'ui/atoms/Select';
+import { CategoryCell, FormWrapper, Input, Modal, Select } from 'ui';
 import { formatDollarsToCents } from 'utils';
 
 const defaultValues = {
@@ -59,8 +58,8 @@ export const AddNewLedgerRecordModal = ({ type, open, onClose }) => {
       onSubmit={handleSubmit(onSubmit)}
       canSubmit={formState.isValid}
     >
-      <Box component={'form'} autoComplete={'off'} noValidate>
-        <Stack direction={'column'} spacing={4}>
+      <FormWrapper>
+        <>
           <Input
             elementName={formInputs.name.elementName}
             control={control}
@@ -85,8 +84,8 @@ export const AddNewLedgerRecordModal = ({ type, open, onClose }) => {
               validationRules={formInputs.category.validationRules}
             />
           )}
-        </Stack>
-      </Box>
+        </>
+      </FormWrapper>
     </Modal>
   );
 };
