@@ -35,12 +35,13 @@ export const Input = ({
           }
         }}
         onChange={(e) => {
-          const isValidNumber = !Number.isNaN(parseFloat(e.target.value));
-          if (isValidNumber) {
-            field.onChange(parseFloat(e.target.value));
-          } else {
-            field.onChange(e.target.value);
-          }
+          if (type === 'number') {
+            const isValidNumber = !Number.isNaN(parseFloat(e.target.value));
+            // eslint-disable-next-line no-unused-expressions
+            isValidNumber
+              ? field.onChange(parseFloat(e.target.value))
+              : field.onChange(e.target.value);
+          } else field.onChange(e.target.value);
         }}
         inputProps={inputProps}
         sx={{ ...inputStyles, ...sx }}
