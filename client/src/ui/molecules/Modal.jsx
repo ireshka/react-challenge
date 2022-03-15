@@ -36,7 +36,7 @@ const StyledCardHeader = styled(CardHeader)({
 });
 
 const StyledCardContent = styled(CardContent)({
-  margin: '1rem 0',
+  margin: '2.3rem 0',
 });
 
 // I use Mui <Modal /> component here but I wonder if
@@ -48,6 +48,7 @@ export const Modal = ({
   onSubmit,
   children,
   title,
+  canSubmit = false,
 }) => (
   <MuiModal open={open} onClose={onClose} aria-labelledby={description}>
     <StyledCard>
@@ -65,8 +66,8 @@ export const Modal = ({
       <StyledCardContent>{children}</StyledCardContent>
       <StyledCardActions>
         <Stack direction={'row'} spacing={2}>
-          <Button text={'Zapisz'} onClick={onSubmit} />
           <Button text={'Anuluj'} onClick={onClose} variant={'outlined'} />
+          <Button text={'Zapisz'} onClick={onSubmit} disabled={!canSubmit} />
         </Stack>
       </StyledCardActions>
     </StyledCard>
@@ -74,6 +75,7 @@ export const Modal = ({
 );
 
 Modal.propTypes = {
+  canSubmit: PropTypes.bool,
   title: PropTypes.string.isRequired,
   description: PropTypes.string,
   open: PropTypes.bool.isRequired,
