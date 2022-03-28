@@ -82,7 +82,7 @@ export const AddNewBudgetRecordModal = ({ open, onClose }) => {
           </FormWrapper>
         )}
         {categoriesList && categoriesList.length === 0 && (
-          <Box>You set budget for all defined categories</Box>
+          <Box>Ustalono budżet dla wszystkich zdefiniowanych kategorii</Box>
         )}
       </>
     </Modal>
