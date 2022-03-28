@@ -1,5 +1,5 @@
 import { Grid } from '@mui/material';
-import { LedgerWidget, Page } from 'ui';
+import { LedgerWidget, Page, Summary } from 'ui';
 
 export const WalletPage = () => (
   <Page title="Portfel">
@@ -9,7 +9,7 @@ export const WalletPage = () => (
       </Grid>
       <Grid container item xs={12} md={4} spacing={3}>
         <Grid item xs={12} data-test-id={'wallet-top-sidebar'}>
-          {/*  TODO in task 5 */}
+          <Summary />
         </Grid>
         <Grid item xs={12} data-test-id={'wallet-bottom-sidebar'}>
           {/*  TODO in task 5 */}

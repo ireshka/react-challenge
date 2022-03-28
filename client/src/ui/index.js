@@ -16,6 +16,7 @@ export { Select } from './atoms/Select';
 // molecules
 export { ButtonGroup } from './molecules/ButtonGroup';
 export { CategoryCell } from './molecules/CategoryCell';
+export { Doughnut } from './molecules/Doughnut';
 export { FormWrapper } from './molecules/Form.wrapper';
 export { Modal } from './molecules/Modal';
 export { Table } from './molecules/table/Table';
@@ -28,6 +29,7 @@ export { BudgetTableWidget } from './organisms/BudgetTable.widget';
 export { LedgerWidget } from './organisms/Ledger.widget';
 export { LedgerTableWidget } from './organisms/LedgerTable.widget';
 export { MainMenu } from './organisms/Menu';
+export { Summary } from './organisms/Summary';
 export { TableWidget } from './organisms/Table.widget';
 
 // templates
