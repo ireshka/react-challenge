@@ -324,6 +324,33 @@ theme = createTheme(theme, {
         },
       },
     },
+    MuiTextField: {
+      styleOverrides: {
+        root: {
+          fieldset: {
+            borderColor: '#E8EAF6',
+          },
+        },
+      },
+    },
+    MuiInputBase: {
+      styleOverrides: {
+        root: {
+          fieldset: {
+            borderColor: '#E8EAF6',
+          },
+        },
+      },
+    },
+    MuiFormHelperText: {
+      styleOverrides: {
+        sizeMedium: {
+          '&.Mui-error': {
+            fontSize: '0.95rem',
+          },
+        },
+      },
+    },
     MuiToolbar: {
       styleOverrides: {
         root: {

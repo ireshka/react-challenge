@@ -27,49 +27,59 @@ const StyledCard = styled(MuiCard)(({ theme }) => ({
 }));
 
 const StyledCardActions = styled(CardActions)({
-  padding: '1rem 0 0 0',
+  padding: '0 0 0 0',
   justifyContent: 'flex-end',
 });
 
 const StyledCardHeader = styled(CardHeader)({
-  margin: '0 0 1rem 0',
+  margin: '0 0 0 0',
+});
+
+const StyledCardContent = styled(CardContent)({
+  margin: '2.3rem 0',
 });
 
 // I use Mui <Modal /> component here but I wonder if
 // <Dialog /> component wouldn't be another solution.
-export const Modal = ({ description, open, onClose, children }) => {
-  const saveButton = <Button text={'Zapisz'} onClick={onClose} />;
-  const cancelButton = (
-    <Button text={'Anuluj'} onClick={onClose} variant={'outlined'} />
-  );
-  return (
-    <MuiModal open={open} onClose={onClose} aria-labelledby={description}>
-      <StyledCard>
-        <StyledCardHeader
-          title={description}
-          component={'h4'}
-          titleTypographyProps={{
-            fontWeight: '700',
-            padding: 0,
-            margin: 0,
-            color: (theme) => theme.palette.common.black,
-          }}
-        />
-        <CardContent>{children}</CardContent>
-        <StyledCardActions>
-          <Stack direction={'row'} spacing={2}>
-            {cancelButton}
-            {saveButton}
-          </Stack>
-        </StyledCardActions>
-      </StyledCard>
-    </MuiModal>
-  );
-};
+export const Modal = ({
+  description,
+  open,
+  onClose,
+  onSubmit,
+  children,
+  title,
+  canSubmit = false,
+}) => (
+  <MuiModal open={open} onClose={onClose} aria-labelledby={description}>
+    <StyledCard>
+      <StyledCardHeader
+        title={title}
+        subheader={description}
+        component={'h4'}
+        titleTypographyProps={{
+          fontWeight: '700',
+          padding: 0,
+          margin: 0,
+          color: (theme) => theme.palette.common.black,
+        }}
+      />
+      <StyledCardContent>{children}</StyledCardContent>
+      <StyledCardActions>
+        <Stack direction={'row'} spacing={2}>
+          <Button text={'Anuluj'} onClick={onClose} variant={'outlined'} />
+          <Button text={'Zapisz'} onClick={onSubmit} disabled={!canSubmit} />
+        </Stack>
+      </StyledCardActions>
+    </StyledCard>
+  </MuiModal>
+);
 
 Modal.propTypes = {
-  description: PropTypes.string.isRequired,
+  canSubmit: PropTypes.bool,
+  title: PropTypes.string.isRequired,
+  description: PropTypes.string,
   open: PropTypes.bool.isRequired,
   onClose: PropTypes.func,
+  onSubmit: PropTypes.func,
   children: PropTypes.element,
 };

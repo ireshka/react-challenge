@@ -5,16 +5,17 @@ import { CategoryCell, LocalizedDate, Money } from 'ui';
 const FormattedAmount = styled('span')(({ theme, mode }) => ({
   color:
     mode === 'INCOME' ? theme.palette.success.dark : theme.palette.error.main,
-  '&::before': {
-    content: mode === 'INCOME' ? '"+"' : '"-"',
-  },
 }));
 
-const getFormattedAmount = (row) => (
-  <FormattedAmount mode={row.mode}>
-    <Money inCents={row.amountInCents} fixed />
-  </FormattedAmount>
-);
+const getFormattedAmount = (row) => {
+  const sign = row.mode === 'EXPENSE' ? '-' : '+';
+  return (
+    <FormattedAmount mode={row.mode}>
+      {sign}
+      <Money inCents={row.amountInCents} fixed />
+    </FormattedAmount>
+  );
+};
 
 export const ledgerHeadCells = [
   {
