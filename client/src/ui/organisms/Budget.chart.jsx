@@ -11,7 +11,9 @@ export const BudgetChart = () => {
         <Paper sx={{ p: 5, borderRadius: 2, marginBottom: '2rem' }}>
           <Stack direction={'row'} justifyContent={'space-between'}>
             <Box>
-              <Typography component={'h4'}>Budżet</Typography>
+              <Typography component={'h4'} variant={'h4'}>
+                Budżet
+              </Typography>
             </Box>
           </Stack>
           <Box sx={{ marginBottom: '45px' }}>

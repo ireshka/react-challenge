@@ -11,10 +11,12 @@ export const SummaryChart = () => {
         <Paper sx={{ p: 5, borderRadius: 2 }}>
           <Stack direction={'row'} justifyContent={'space-between'}>
             <Box>
-              <Typography component={'h4'}>Saldo</Typography>
+              <Typography component={'h4'} variant={'h4'}>
+                Saldo
+              </Typography>
             </Box>
             <Box>
-              <Typography component={'h3'}>
+              <Typography component={'h3'} variant={'h3'}>
                 <Money inCents={data.balance} />
               </Typography>
             </Box>
