@@ -9,9 +9,11 @@ export const useDeleteLedger = () => {
 
   return useMutation(deleteLedger, {
     onSuccess: async () => {
-      await queryClient.invalidateQueries(LEDGER_QUERY);
-      await queryClient.invalidateQueries(SUMMARY_QUERY);
-      await queryClient.invalidateQueries(BUDGET_QUERY);
+      await Promise.all([
+        queryClient.refetchQueries([LEDGER_QUERY]),
+        queryClient.refetchQueries([SUMMARY_QUERY]),
+        queryClient.refetchQueries([BUDGET_QUERY]),
+      ]);
     },
   });
 };
