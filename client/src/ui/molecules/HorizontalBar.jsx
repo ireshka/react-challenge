@@ -23,6 +23,7 @@ ChartJS.register(
 export const options = {
   indexAxis: 'y',
   responsive: true,
+  aspectRatio: 1.5,
   plugins: {
     legend: {
       display: false,
@@ -31,7 +32,7 @@ export const options = {
       callbacks: {
         label(context) {
           const label = context.formattedValue;
-          return `${label} %`;
+          return ` ${label} %`;
         },
         title() {
           return null;
