@@ -6,6 +6,7 @@ import { ArcElement, Chart as ChartJS, Legend, Tooltip } from 'chart.js';
 // import PropTypes from 'prop-types';
 import { Doughnut as ChartDoughnut } from 'react-chartjs-2';
 import { CategoryCell, Error } from 'ui';
+import { formatCentsToDollars } from 'utils';
 
 ChartJS.register(ArcElement, Tooltip, Legend);
 
@@ -32,6 +33,14 @@ export const Doughnut = ({ data }) => {
     plugins: {
       legend: {
         display: false,
+      },
+      tooltip: {
+        callbacks: {
+          label(context) {
+            const label = formatCentsToDollars(parseFloat(context.parsed));
+            return ` ${label}`;
+          },
+        },
       },
     },
   };
