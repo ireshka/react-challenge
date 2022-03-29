@@ -9,9 +9,11 @@ export const useAddLedger = () => {
 
   return useMutation(addLedger, {
     onSuccess: async () => {
-      await queryClient.refetchQueries([LEDGER_QUERY]);
-      await queryClient.refetchQueries([SUMMARY_QUERY]);
-      await queryClient.refetchQueries([BUDGET_QUERY]);
+      await Promise.all([
+        queryClient.refetchQueries([LEDGER_QUERY]),
+        queryClient.refetchQueries([SUMMARY_QUERY]),
+        queryClient.refetchQueries([BUDGET_QUERY]),
+      ]);
     },
   });
 };
