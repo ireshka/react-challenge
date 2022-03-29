@@ -18,6 +18,7 @@ export { ButtonGroup } from './molecules/ButtonGroup';
 export { CategoryCell } from './molecules/CategoryCell';
 export { Doughnut } from './molecules/Doughnut';
 export { FormWrapper } from './molecules/Form.wrapper';
+export { HorizontalBar } from './molecules/HorizontalBar';
 export { Modal } from './molecules/Modal';
 export { Table } from './molecules/table/Table';
 
@@ -25,11 +26,12 @@ export { Table } from './molecules/table/Table';
 export { AddNewBudgetRecordModal } from './organisms/AddNewBudgetRecord.modal';
 export { AddNewLedgerRecordModal } from './organisms/AddNewLedgerRecord.modal';
 export { AppBar } from './organisms/AppBar';
+export { BudgetChart } from './organisms/Budget.chart';
 export { BudgetTableWidget } from './organisms/BudgetTable.widget';
 export { LedgerWidget } from './organisms/Ledger.widget';
 export { LedgerTableWidget } from './organisms/LedgerTable.widget';
 export { MainMenu } from './organisms/Menu';
-export { Summary } from './organisms/Summary';
+export { SummaryChart } from './organisms/Summary.chart';
 export { TableWidget } from './organisms/Table.widget';
 
 // templates

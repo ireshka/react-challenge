@@ -1,5 +1,6 @@
 export { useAddBudget } from './useAddBudget';
 export { useAddLedger } from './useAddLedger';
+export { useBudgetForChart } from './useBudgetForChart';
 export { useBudgetModal } from './useBudgetModal';
 export { useBudgets } from './useBudgets';
 export { useCategories } from './useCategories';

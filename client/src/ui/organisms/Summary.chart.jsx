@@ -2,7 +2,7 @@ import { Box, Paper, Stack, Typography } from '@mui/material';
 import { useSummary } from 'hooks';
 import { Doughnut, Loader, Money } from 'ui';
 
-const Summary = () => {
+export const SummaryChart = () => {
   const { data, isLoading } = useSummary();
   return (
     <>
@@ -28,5 +28,3 @@ const Summary = () => {
     </>
   );
 };
-
-export { Summary };
