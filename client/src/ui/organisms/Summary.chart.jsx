@@ -8,6 +8,8 @@ export const SummaryChart = () => {
     <>
       {isLoading && <Loader />}
       {data && (
+        // I thought about extra wrapper component here
+        // but I didn't want to make it too complicated
         <Paper sx={{ p: 5, borderRadius: 2 }}>
           <Stack direction={'row'} justifyContent={'space-between'}>
             <Box>
