@@ -112,6 +112,10 @@ theme = createTheme(theme, {
     body1: {
       fontSize: '1.2rem',
     },
+    subtitle1: {
+      fontWeight: 400,
+      color: theme.palette.grey['500'],
+    },
     button: {
       textTransform: 'none',
       letterSpacing: 0,

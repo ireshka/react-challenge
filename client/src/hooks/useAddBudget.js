@@ -9,8 +9,10 @@ export const useAddBudget = () => {
 
   return useMutation(addBudget, {
     onSuccess: async () => {
-      await queryClient.refetchQueries([BUDGET_QUERY]);
-      await queryClient.refetchQueries([CATEGORIES_QUERY]);
+      await Promise.all([
+        queryClient.refetchQueries([BUDGET_QUERY]),
+        queryClient.refetchQueries([CATEGORIES_QUERY]),
+      ]);
     },
   });
 };

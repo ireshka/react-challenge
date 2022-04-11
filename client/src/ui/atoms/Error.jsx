@@ -24,7 +24,7 @@ export const Error = ({ error }) => (
       <Typography>Uruchom Server!</Typography>
     ) : (
       <InfoWithCaption
-        imageCaption={unkownErrorText}
+        imageCaption={error.text || unkownErrorText}
         imageMaxWidth={imageMaxWidth}
         imageMaxHeight={imageMaxHeight}
         imageSrc={Image1x}
@@ -37,5 +37,6 @@ export const Error = ({ error }) => (
 Error.propTypes = {
   error: PropTypes.shape({
     message: PropTypes.string,
+    text: PropTypes.string,
   }),
 };

@@ -1,5 +1,5 @@
 import { LedgerService } from 'api';
-import { LEDGER_QUERY } from 'queryKeys';
+import { BUDGET_QUERY, LEDGER_QUERY, SUMMARY_QUERY } from 'queryKeys';
 import { useMutation, useQueryClient } from 'react-query';
 
 const deleteLedger = (values) => LedgerService.remove({ ids: values });
@@ -9,7 +9,11 @@ export const useDeleteLedger = () => {
 
   return useMutation(deleteLedger, {
     onSuccess: async () => {
-      await queryClient.invalidateQueries(LEDGER_QUERY);
+      await Promise.all([
+        queryClient.refetchQueries([LEDGER_QUERY]),
+        queryClient.refetchQueries([SUMMARY_QUERY]),
+        queryClient.refetchQueries([BUDGET_QUERY]),
+      ]);
     },
   });
 };

@@ -9,8 +9,10 @@ export const useDeleteBudget = () => {
 
   return useMutation(deleteBudget, {
     onSuccess: async () => {
-      await queryClient.invalidateQueries(BUDGET_QUERY);
-      await queryClient.invalidateQueries(CATEGORIES_QUERY);
+      await Promise.all([
+        queryClient.refetchQueries([BUDGET_QUERY]),
+        queryClient.refetchQueries([CATEGORIES_QUERY]),
+      ]);
     },
   });
 };
