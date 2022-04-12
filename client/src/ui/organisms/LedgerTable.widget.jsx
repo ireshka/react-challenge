@@ -1,4 +1,3 @@
-/* eslint-disable no-console */
 import { useDeleteLedger, useLedgers } from 'hooks';
 
 import { getUniqueId, ledgerHeadCells } from './LedgerTable.widget.utils';
