@@ -52,6 +52,7 @@ module.exports = {
      * @info eslint-plugin-import
      */
     'import/prefer-default-export': 'off',
+    'import/no-extraneous-dependencies': 'off',
     /**
      * @info simple-import-sort
      */

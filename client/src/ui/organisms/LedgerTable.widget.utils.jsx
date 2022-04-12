@@ -1,4 +1,3 @@
-/* eslint-disable no-console */
 import { styled } from '@mui/material';
 import { CategoryCell, LocalizedDate, Money } from 'ui';
 

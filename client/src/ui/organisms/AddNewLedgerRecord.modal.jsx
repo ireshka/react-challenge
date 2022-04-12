@@ -31,6 +31,7 @@ const getRequestBody = ({ type, formData }) => ({
 export const AddNewLedgerRecordModal = ({ type, open, onClose }) => {
   const { data: categoriesList } = useCategories({ unlinkedToBudget: false });
   const addLedgerMutation = useAddLedger();
+
   const { handleSubmit, control, formState, reset } = useForm({
     defaultValues,
     mode: 'all',
